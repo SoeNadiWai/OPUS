@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent" android:layout_width="fill_parent"
+    android:background="#4FA39E8F" android:orientation="vertical"
+    >
+
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/LinearLayoutHeader"
+        android:orientation="horizontal">
+        <ImageView android:layout_width="match_parent"
+            android:layout_height="200dp" android:id="@+id/ImageViewProduct"
+            android:padding="30dp"
+            android:background="#FCF7F7"
+            android:adjustViewBounds="false" android:scaleType="fitXY"
+            android:src="@drawable/vcake" android:layout_margin="0dip"></ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="18dip"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:text="Cake Name"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/TextViewProductTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dead or Alive"
+            android:textAlignment="textEnd"
+            android:paddingRight="10dp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18dip"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="18dip"
+            android:text="Cake Flavour" />
+
+        <TextView
+            android:id="@+id/TextViewProductFlavour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="18dip"
+            android:paddingRight="10dp"
+            android:textAlignment="textEnd"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:textColor="#000000"
+            android:textSize="18dip"
+            android:text="Cake Price" />
+
+        <TextView
+            android:id="@+id/TextViewProductPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:paddingRight="10dp"
+            android:textSize="18dip"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:text="Description"
+        android:textStyle="bold"
+        android:paddingBottom="18dp"
+        android:textColor="#000000"
+        android:textSize="18dip"
+        />
+
+    <TextView
+        android:id="@+id/TextViewProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:text="Product description"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18dip"
+       ></TextView>
+
+    <Button android:layout_width="200dp"
+        android:layout_height="wrap_content" android:layout_margin="5dip"
+        android:layout_gravity="right" android:id="@+id/ButtonAddToCart"
+        style="@style/Theme.MaterialButton"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:text="Add to Cart"></Button>
+</LinearLayout>
