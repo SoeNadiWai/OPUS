@@ -130,7 +130,7 @@ public class Create extends AppCompatActivity implements View.OnTouchListener, V
 //                        ((ImageView) v).setColorFilter(ContextCompat.getColor(DragandDrop.this, R.color.colorPrimary), android.graphics.PorterDuff.Mode.MULTIPLY);
                             break;
                         case "chocolate":
-                            imgDestination.setImageResource(R.drawable.planec);
+                            imgDestination.setImageResource(R.drawable.cakechoco);
 //                        ((ImageView) v).setColorFilter(ContextCompat.getColor(DragandDrop.this, R.color.colorAccent), android.graphics.PorterDuff.Mode.MULTIPLY);
 //                            break;
 //                        case "strawberry":

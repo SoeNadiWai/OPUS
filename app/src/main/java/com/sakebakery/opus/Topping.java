@@ -18,6 +18,7 @@ import android.widget.Toast;
 public class Topping extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener {
 
     String st = "";
+    String st2="";
     String clipData="";
     ImageView btnss, btnbbs,btngs;
     ImageView imgDestination1;
@@ -41,32 +42,39 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
         imgDestination1.setOnDragListener(this);
         Intent intent = getIntent();
         st = intent.getStringExtra("message1");
+        st2=intent.getStringExtra("message2");
         Log.i("str",st);
-        if(st.equals("strawberry"))
-        {
-            imgDestination1.setImageResource(R.drawable.strawberrycream);
+        if(st2.equals("strawberry")) {
+            if (st.equals("strawberry")) {
+                imgDestination1.setImageResource(R.drawable.strawberrycream);
+            } else if (st.equals("blueberry")) {
+                imgDestination1.setImageResource(R.drawable.strawberrybb);
+            } else if (st.equals("grape")) {
+                imgDestination1.setImageResource(R.drawable.strawberrygrape);
+            } else if (st.equals("butter")) {
+                imgDestination1.setImageResource(R.drawable.strawberrybutter);
+            } else if (st.equals("chocolate")) {
+                imgDestination1.setImageResource(R.drawable.strawberrybut);
+            } else if (st.equals("whip")) {
+                imgDestination1.setImageResource(R.drawable.whitecream);
+            }
         }
-        else if(st.equals("blueberry"))
+        else if(st2.equals("chocolate"))
         {
-            imgDestination1.setImageResource(R.drawable.strawberrybb);
+            if (st.equals("strawberry")) {
+                imgDestination1.setImageResource(R.drawable.cakestraw);
+            } else if (st.equals("blueberry")) {
+                imgDestination1.setImageResource(R.drawable.cakeblue);
+            } else if (st.equals("grape")) {
+                imgDestination1.setImageResource(R.drawable.cakegrape);
+            } else if (st.equals("butter")) {
+                imgDestination1.setImageResource(R.drawable.cakebutter);
+            } else if (st.equals("chocolate")) {
+                imgDestination1.setImageResource(R.drawable.cakechoco);
+            } else if (st.equals("whip")) {
+                imgDestination1.setImageResource(R.drawable.cakewhite);
+            }
         }
-        else if(st.equals("grape"))
-        {
-            imgDestination1.setImageResource(R.drawable.strawberrygrape);
-        }
-        else if(st.equals("butter"))
-        {
-            imgDestination1.setImageResource(R.drawable.strawberrybutter);
-        }
-        else if(st.equals("chocolate"))
-        {
-            imgDestination1.setImageResource(R.drawable.strawberrybut);
-        }
-        else if (st.equals("whip"))
-        {
-            imgDestination1.setImageResource(R.drawable.whitecream);
-        }
-
 
         Button mClickButton2 = (Button)findViewById(R.id.btnicing);
 
@@ -165,97 +173,154 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
 
             case DragEvent.ACTION_DRAG_ENTERED:
                 clipData = event.getClipDescription().getLabel().toString();
-                if (st.equals("strawberry")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.sprinkleontop);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.bontop);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.sontop);
+                if(st2.equals("strawberry")) {
+                    if (st.equals("strawberry")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.sprinkleontop);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.bontop);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.sontop);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("blueberry")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.spbontop);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.bbontop);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.sbontop);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("grape")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.grapesprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.grapebberry);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.grapesberry);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("butter")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.bcreamsprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.bcreambberry);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.bcreamsberry);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("chocolate")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.chocosprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocobberry);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocostrawberry);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("whip")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.whipsprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.whipbberry);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.whipsberry);
+                        }
+                        v.invalidate();
+                        return true;
                     }
+                }
+                else
+                {
+                    if (st.equals("strawberry")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.chocop);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocob);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocos);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("blueberry")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.chocobs);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocobb);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocobst);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("grape")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.grapesprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.grapebberry);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.grapesberry);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("butter")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.chocospr);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocobluebe);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.chocostraw);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("chocolate")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.ac);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.ab);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.a);
+                        }
+                        v.invalidate();
+                        return true;
+                    } else if (st.equals("whip")) {
+                        if (clipData.equals("sprinkle")) {
+                            imgDestination1.setImageResource(R.drawable.blacksprinkle);
+                        } else if (clipData.equals("bberry")) {
+                            imgDestination1.setImageResource(R.drawable.blackblue);
+                        } else if (clipData.equals("sberry")) {
+                            imgDestination1.setImageResource(R.drawable.blackstraw);
+                        }
+                        v.invalidate();
+                        return true;
+                    }
+                }
+
+
+
+//                else {
+//
+//                    if (clipData.equals("s")) {
+//                        imgDestination1.setImageResource(R.drawable.plane);
+//                    } else if (clipData.equals("bb")) {
+//                        imgDestination1.setImageResource(R.drawable.planec);
+//                    } else if (clipData.equals("g")) {
+//                        imgDestination1.setImageResource(R.drawable.planec);
+//                    } else if (clipData.equals("butter")) {
+//                        imgDestination1.setImageResource(R.drawable.planec);
+//                    } else if (clipData.equals("c")) {
+//                        imgDestination1.setImageResource(R.drawable.planec);
+//                    } else if (clipData.equals("w")) {
+//                        imgDestination1.setImageResource(R.drawable.planec);
+//                    }
                     v.invalidate();
                     return true;
-                }
-                   else if (st.equals("blueberry")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.spbontop);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.bbontop);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.sbontop);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-                else if (st.equals("grape")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.grapesprinkle);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.grapebberry);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.grapesberry);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-                else if (st.equals("butter")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.bcreamsprinkle);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.bcreambberry);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.bcreamsberry);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-                else if (st.equals("chocolate")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.chocosprinkle);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.chocobberry);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.chocostrawberry);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-                else if (st.equals("whip")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination1.setImageResource(R.drawable.whipsprinkle);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination1.setImageResource(R.drawable.whipbberry);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination1.setImageResource(R.drawable.whipsberry);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-
-
-                else {
-
-                    if (clipData.equals("s")) {
-                        imgDestination1.setImageResource(R.drawable.plane);
-                    } else if (clipData.equals("bb")) {
-                        imgDestination1.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("g")) {
-                        imgDestination1.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("butter")) {
-                        imgDestination1.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("c")) {
-                        imgDestination1.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("w")) {
-                        imgDestination1.setImageResource(R.drawable.planec);
-                    }
-                    v.invalidate();
-                    return true;
-                }
+               // }
 
 //                switch (clipData) {
 //                    case "strawberry":
