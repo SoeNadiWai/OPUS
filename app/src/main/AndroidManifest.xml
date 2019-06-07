@@ -18,14 +18,28 @@
         android:roundIcon="@drawable/opus"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Topping"></activity>
+        <activity android:name=".Icing" />
+        <activity
+            android:name=".TabDesigner"
+            android:label="@string/title_activity_tab_designer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CatalogActivity" />
+        <activity
+            android:name=".Designer"
+            android:label="@string/title_activity_designer" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".ShoppingCartActivity" /> <!-- <activity android:name=".HomeDashboard" -->
-        <!-- android:theme="@style/AppTheme.FullScreen"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
+        <activity
+            android:name=".Create"
+            android:label="OPUS"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ChooseFlavour" /> <!-- <activity android:name=".DragandDrop"></activity> -->
         <activity
             android:name=".Dashboard"
@@ -47,17 +61,7 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
-            android:name=".CatalogActivity"
-            android:label="OPUS"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity> <!-- <activity android:name=".CatalogActivity" /> -->
+            android:windowSoftInputMode="stateHidden|adjustPan" /> <!-- <activity android:name=".CatalogActivity" /> -->
         <activity android:name=".Cartlist_firebase_api" />
         <activity android:name=".UserFilter" />
         <activity android:name=".startscreen" />

@@ -29,14 +29,21 @@ public class ProductDetailsActivity extends Activity {
         // Set the proper image and text
         ImageView productImageView = (ImageView) findViewById(R.id.ImageViewProduct);
         productImageView.setImageDrawable(selectedProduct.productImage);
+
         TextView productTitleTextView = (TextView) findViewById(R.id.TextViewProductTitle);
         productTitleTextView.setText(selectedProduct.title);
+
         TextView productFlavorTextView = (TextView) findViewById(R.id.TextViewProductFlavour);
         productFlavorTextView.setText(selectedProduct.flavor);
+
         TextView productPriceTextView = (TextView) findViewById(R.id.TextViewProductPrice);
-        productPriceTextView.setText(selectedProduct.price);
+        productPriceTextView.setText(""+selectedProduct.price+" MMK");
+
         TextView productDetailsTextView = (TextView) findViewById(R.id.TextViewProductDetails);
         productDetailsTextView.setText(selectedProduct.description);
+
+        TextView productIcingTextView = (TextView) findViewById(R.id. TextViewProductIcing);
+        productIcingTextView.setText(""+selectedProduct.icing);
 
         Button addToCartButton = (Button) findViewById(R.id.ButtonAddToCart);
         addToCartButton.setOnClickListener(new OnClickListener() {

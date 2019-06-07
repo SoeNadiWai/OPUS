@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2F7FA"
+    android:background="#E91E63"
     tools:context=".DragandDrop">
 
     <LinearLayout
@@ -26,7 +26,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/raleway"
                 android:paddingTop="10dp"
-                android:text="Flavour Options"
+                android:text="Topping Options"
                 android:textColor="#ffffff"
                 android:textSize="25dip"
                 android:textStyle="bold"></TextView>
@@ -35,10 +35,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#FDFCFC">
 
             <ImageView
-                android:id="@+id/cakeDestination"
+                android:id="@+id/toppingDestination"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/circle_border"
@@ -51,103 +52,86 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
-            android:text="Choose Flavour"
+            android:text="Choose Topping"
             android:layout_marginTop="20dp"
-            android:textColor="#E91E63"
+            android:layout_marginBottom="10dp"
+            android:textColor="#0E0D0D"
             android:textStyle="bold"
             android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="2dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#E91E63">
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="1">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/SFlavor"
+                        android:id="@+id/sprinkle"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_weight="1"
-                        android:tag="strawberry"
-                        app:srcCompat="@drawable/strawberryf" />
+                        android:adjustViewBounds="true"
+                        android:tag="sprinkle"
+                        app:srcCompat="@drawable/stopping" />
 
                     <ImageView
-                        android:id="@+id/CFlavor"
+                        android:id="@+id/bberry"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="30dp"
                         android:layout_weight="1"
-                        android:tag="chocolate"
-                        app:srcCompat="@drawable/chocof" />
+                        android:tag="bberry"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/bstop" />
+
+
+                    <ImageView
+                        android:id="@+id/sberry"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="1"
+                        android:tag="sberry"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/sttop" />
+
+
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="70dp"
-                            android:layout_weight="1"
-                            android:text="STRAWBERRY"
-                            android:textColor="#E91E63" />
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="60dp"
-                            android:layout_weight="1"
-                            android:text="CHOCOLATE"
-                            android:textColor="#352626" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnfa"
+            android:id="@+id/ButtonAddToCart"
             style="@style/Theme.MaterialButton"
             android:layout_width="200dp"
             android:layout_height="39dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="5dip"
             android:background="@drawable/round_corners"
-            android:textAlignment="center"
+            android:drawableLeft="@drawable/cartpng"
             android:elevation="10dp"
             android:fontFamily="@font/raleway"
-            android:layout_marginTop="2dp"
             android:paddingLeft="20dp"
-            android:text="Next"
+            android:text="Add to Cart"
             android:textColor="@color/browser_actions_bg_grey"
             android:textSize="18dp"
             android:textStyle="bold"></Button>
 
     </LinearLayout>
+
 
 </RelativeLayout>
