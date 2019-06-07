@@ -17,54 +17,54 @@ import android.widget.Toast;
 
 public class Topping extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener {
 
-    String str = "";
+    String st = "";
     String clipData="";
-    ImageView btns, btnbb,btng;
-    ImageView imgDestination;
+    ImageView btnss, btnbbs,btngs;
+    ImageView imgDestination1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_topping);
 
-        btns = findViewById(R.id.bberry);
-        btnbb = findViewById(R.id.sberry);
-        btng = findViewById(R.id.sprinkle);
+        btnss = findViewById(R.id.bberry);
+        btnbbs = findViewById(R.id.sberry);
+        btngs = findViewById(R.id.sprinkle);
 
 
-        imgDestination = findViewById(R.id.toppingDestination);
+        imgDestination1 = findViewById(R.id.toppingDestination);
 
-        btns.setOnTouchListener(this);
-        btnbb.setOnTouchListener(this);
-        btng.setOnTouchListener(this);
+        btnss.setOnTouchListener(this);
+        btnbbs.setOnTouchListener(this);
+        btngs.setOnTouchListener(this);
 
-        imgDestination.setOnDragListener(this);
+        imgDestination1.setOnDragListener(this);
         Intent intent = getIntent();
-        str = intent.getStringExtra("message");
-        Log.i("str",str);
-        if(str.equals("strawberry"))
+        st = intent.getStringExtra("message1");
+        Log.i("str",st);
+        if(st.equals("strawberry"))
         {
-            imgDestination.setImageResource(R.drawable.strawberrycream);
+            imgDestination1.setImageResource(R.drawable.strawberrycream);
         }
-        else if(str.equals("blueberry"))
+        else if(st.equals("blueberry"))
         {
-            imgDestination.setImageResource(R.drawable.strawberrybb);
+            imgDestination1.setImageResource(R.drawable.strawberrybb);
         }
-        else if(str.equals("grape"))
+        else if(st.equals("grape"))
         {
-            imgDestination.setImageResource(R.drawable.strawberrygrape);
+            imgDestination1.setImageResource(R.drawable.strawberrygrape);
         }
-        else if(str.equals("butter"))
+        else if(st.equals("butter"))
         {
-            imgDestination.setImageResource(R.drawable.strawberrybutter);
+            imgDestination1.setImageResource(R.drawable.strawberrybutter);
         }
-        else if(str.equals("chocolate"))
+        else if(st.equals("chocolate"))
         {
-            imgDestination.setImageResource(R.drawable.strawberrybut);
+            imgDestination1.setImageResource(R.drawable.strawberrybut);
         }
-        else if (str.equals("whip"))
+        else if (st.equals("whip"))
         {
-            imgDestination.setImageResource(R.drawable.whitecream);
+            imgDestination1.setImageResource(R.drawable.whitecream);
         }
 
 
@@ -75,37 +75,37 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
             @Override
             public void onClick(View v) {
 
-//                if (clipData.equals("s")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","strawberry");
-//
-//                    startActivity(intent);
-//                } else if (clipData.equals("bb")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","chocolate");
-//
-//                    startActivity(intent);
-//                } else if (clipData.equals("g")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","strawberry");
-//
-//                    startActivity(intent);
-//                } else if (clipData.equals("butter")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","strawberry");
-//
-//                    startActivity(intent);
-//                } else if (clipData.equals("c")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","strawberry");
-//
-//                    startActivity(intent);
-//                } else if (clipData.equals("w")) {
-//                    Intent intent = new Intent(getApplicationContext(), Icing.class);
-//                    intent.putExtra("message","strawberry");
-//
-//                    startActivity(intent);
-//                }
+                if (clipData.equals("s")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","strawberry");
+
+                    startActivity(intent);
+                } else if (clipData.equals("bb")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","chocolate");
+
+                    startActivity(intent);
+                } else if (clipData.equals("g")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","strawberry");
+
+                    startActivity(intent);
+                } else if (clipData.equals("butter")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","strawberry");
+
+                    startActivity(intent);
+                } else if (clipData.equals("c")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","strawberry");
+
+                    startActivity(intent);
+                } else if (clipData.equals("w")) {
+                    Intent intent = new Intent(getApplicationContext(), Icing.class);
+                    intent.putExtra("message","strawberry");
+
+                    startActivity(intent);
+                }
 
             }
         });
@@ -165,72 +165,72 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
 
             case DragEvent.ACTION_DRAG_ENTERED:
                 clipData = event.getClipDescription().getLabel().toString();
-                if (str.equals("strawberry")) {
+                if (st.equals("strawberry")) {
                     if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.sprinkleontop);
+                        imgDestination1.setImageResource(R.drawable.sprinkleontop);
                     } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.bontop);
+                        imgDestination1.setImageResource(R.drawable.bontop);
                     } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.sontop);
+                        imgDestination1.setImageResource(R.drawable.sontop);
                     }
                     v.invalidate();
                     return true;
                 }
-                   else if (str.equals("blueberry")) {
+                   else if (st.equals("blueberry")) {
                     if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.spbontop);
+                        imgDestination1.setImageResource(R.drawable.spbontop);
                     } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.bbontop);
+                        imgDestination1.setImageResource(R.drawable.bbontop);
                     } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.sbontop);
-                    }
-                    v.invalidate();
-                    return true;
-                }
-
-                else if (str.equals("grape")) {
-                    if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.grapesprinkle);
-                    } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.grapebberry);
-                    } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.grapesberry);
+                        imgDestination1.setImageResource(R.drawable.sbontop);
                     }
                     v.invalidate();
                     return true;
                 }
 
-                else if (str.equals("butter")) {
+                else if (st.equals("grape")) {
                     if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.bcreamsprinkle);
+                        imgDestination1.setImageResource(R.drawable.grapesprinkle);
                     } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.bcreambberry);
+                        imgDestination1.setImageResource(R.drawable.grapebberry);
                     } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.bcreamsberry);
+                        imgDestination1.setImageResource(R.drawable.grapesberry);
                     }
                     v.invalidate();
                     return true;
                 }
 
-                else if (str.equals("chocolate")) {
+                else if (st.equals("butter")) {
                     if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.chocosprinkle);
+                        imgDestination1.setImageResource(R.drawable.bcreamsprinkle);
                     } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.chocobberry);
+                        imgDestination1.setImageResource(R.drawable.bcreambberry);
                     } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.chocostrawberry);
+                        imgDestination1.setImageResource(R.drawable.bcreamsberry);
                     }
                     v.invalidate();
                     return true;
                 }
 
-                else if (str.equals("whip")) {
+                else if (st.equals("chocolate")) {
                     if (clipData.equals("sprinkle")) {
-                        imgDestination.setImageResource(R.drawable.whipsprinkle);
+                        imgDestination1.setImageResource(R.drawable.chocosprinkle);
                     } else if (clipData.equals("bberry")) {
-                        imgDestination.setImageResource(R.drawable.whipbberry);
+                        imgDestination1.setImageResource(R.drawable.chocobberry);
                     } else if (clipData.equals("sberry")) {
-                        imgDestination.setImageResource(R.drawable.whipsberry);
+                        imgDestination1.setImageResource(R.drawable.chocostrawberry);
+                    }
+                    v.invalidate();
+                    return true;
+                }
+
+                else if (st.equals("whip")) {
+                    if (clipData.equals("sprinkle")) {
+                        imgDestination1.setImageResource(R.drawable.whipsprinkle);
+                    } else if (clipData.equals("bberry")) {
+                        imgDestination1.setImageResource(R.drawable.whipbberry);
+                    } else if (clipData.equals("sberry")) {
+                        imgDestination1.setImageResource(R.drawable.whipsberry);
                     }
                     v.invalidate();
                     return true;
@@ -241,17 +241,17 @@ public class Topping extends AppCompatActivity implements View.OnTouchListener, 
                 else {
 
                     if (clipData.equals("s")) {
-                        imgDestination.setImageResource(R.drawable.plane);
+                        imgDestination1.setImageResource(R.drawable.plane);
                     } else if (clipData.equals("bb")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination1.setImageResource(R.drawable.planec);
                     } else if (clipData.equals("g")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination1.setImageResource(R.drawable.planec);
                     } else if (clipData.equals("butter")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination1.setImageResource(R.drawable.planec);
                     } else if (clipData.equals("c")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination1.setImageResource(R.drawable.planec);
                     } else if (clipData.equals("w")) {
-                        imgDestination.setImageResource(R.drawable.planec);
+                        imgDestination1.setImageResource(R.drawable.planec);
                     }
                     v.invalidate();
                     return true;

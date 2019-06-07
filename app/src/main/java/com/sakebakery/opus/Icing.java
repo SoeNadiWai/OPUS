@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class Icing extends AppCompatActivity implements View.OnTouchListener, View.OnDragListener {
     String str = "";
-    String clipData="";
+    String clipData2="";
     ImageView btns, btnbb,btng,btnbutter,btnchoco,btnwhip;
     ImageView imgDestination;
 
@@ -43,8 +43,8 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
         btnwhip.setOnTouchListener(this);
 
         imgDestination.setOnDragListener(this);
-        Intent intent = getIntent();
-        str = intent.getStringExtra("message");
+        Intent intent1 = getIntent();
+        str = intent1.getStringExtra("message");
         Log.i("str",str);
         if(str.equals("strawberry"))
         {
@@ -58,47 +58,40 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
 
         Button mClickButton2 = (Button)findViewById(R.id.btnicing);
 
-
+        Log.i("test",clipData2);
         mClickButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (clipData.equals("s")) {
+                if (clipData2.equals("s")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","strawberry");
-
+                    intent.putExtra("message1","strawberry");
                     startActivity(intent);
-                } else if (clipData.equals("bb")) {
+                } else if (clipData2.equals("bb")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","blueberry");
-
+                    intent.putExtra("message1","blueberry");
                     startActivity(intent);
-                } else if (clipData.equals("g")) {
+                } else if (clipData2.equals("g")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","grape");
-
+                    intent.putExtra("message1","grape");
                     startActivity(intent);
-                } else if (clipData.equals("butter")) {
+                } else if (clipData2.equals("butter")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","butter");
-
+                    intent.putExtra("message1","butter");
                     startActivity(intent);
-                } else if (clipData.equals("c")) {
+                } else if (clipData2.equals("c")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","chocolate");
-
+                    intent.putExtra("message1","chocolate");
                     startActivity(intent);
-                } else if (clipData.equals("w")) {
+                } else if (clipData2.equals("w")) {
                     Intent intent = new Intent(getApplicationContext(), Topping.class);
-                    intent.putExtra("message","whip");
-
+                    intent.putExtra("message1","whip");
                     startActivity(intent);
                 }
 
+
             }
         });
-
-
     }
 
     @Override
@@ -176,19 +169,19 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
                 return true;
 
             case DragEvent.ACTION_DRAG_ENTERED:
-                clipData = event.getClipDescription().getLabel().toString();
+                clipData2 = event.getClipDescription().getLabel().toString();
                 if (str.equals("strawberry")) {
-                    if (clipData.equals("s")) {
+                    if (clipData2.equals("s")) {
                         imgDestination.setImageResource(R.drawable.strawberrycream);
-                    } else if (clipData.equals("bb")) {
+                    } else if (clipData2.equals("bb")) {
                         imgDestination.setImageResource(R.drawable.strawberrybb);
-                    } else if (clipData.equals("g")) {
+                    } else if (clipData2.equals("g")) {
                         imgDestination.setImageResource(R.drawable.strawberrygrape);
-                    } else if (clipData.equals("butter")) {
+                    } else if (clipData2.equals("butter")) {
                         imgDestination.setImageResource(R.drawable.strawberrybutter);
-                    } else if (clipData.equals("c")) {
+                    } else if (clipData2.equals("c")) {
                         imgDestination.setImageResource(R.drawable.strawberrybut);
-                    } else if (clipData.equals("w")) {
+                    } else if (clipData2.equals("w")) {
                         imgDestination.setImageResource(R.drawable.whitecream);
                     }
                     v.invalidate();
@@ -197,17 +190,17 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
                 }
                 else {
 
-                    if (clipData.equals("s")) {
+                    if (clipData2.equals("s")) {
                         imgDestination.setImageResource(R.drawable.plane);
-                    } else if (clipData.equals("bb")) {
+                    } else if (clipData2.equals("bb")) {
                         imgDestination.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("g")) {
+                    } else if (clipData2.equals("g")) {
                         imgDestination.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("butter")) {
+                    } else if (clipData2.equals("butter")) {
                         imgDestination.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("c")) {
+                    } else if (clipData2.equals("c")) {
                         imgDestination.setImageResource(R.drawable.planec);
-                    } else if (clipData.equals("w")) {
+                    } else if (clipData2.equals("w")) {
                         imgDestination.setImageResource(R.drawable.planec);
                     }
                     v.invalidate();
@@ -244,8 +237,8 @@ public class Icing extends AppCompatActivity implements View.OnTouchListener, Vi
             case DragEvent.ACTION_DROP:
 
 
-                clipData = event.getClipDescription().getLabel().toString();
-                Toast.makeText(getApplicationContext(), clipData, Toast.LENGTH_SHORT).show();
+                clipData2 = event.getClipDescription().getLabel().toString();
+                Toast.makeText(getApplicationContext(), clipData2, Toast.LENGTH_SHORT).show();
 
                 v.invalidate();
                 return true;

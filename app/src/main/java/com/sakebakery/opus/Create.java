@@ -53,11 +53,10 @@ public class Create extends AppCompatActivity implements View.OnTouchListener, V
                    intent.putExtra("message","strawberry");
                    startActivity(intent);
                }
-                else if(clipData=="chocolate") {
+                else if(clipData.equals("chocolate")) {
 
                     Intent intent = new Intent(getApplicationContext(), Icing.class);
                     intent.putExtra("message","chocolate");
-
                     startActivity(intent);
                 }
             }
